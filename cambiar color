@@ -1,0 +1,35 @@
+<script setup>
+import { ref } from 'vue';
+
+// let xd=ref(true)
+
+let motos=ref([{estado:true},
+{estado:true},
+{estado:false},
+{estado:false},
+{estado:true},
+{estado:false},
+{estado:false},
+{estado:false},
+{estado:false}])
+
+function cambiar(i){
+  console.log('fasda')
+  motos.value[i].estado=!motos.value[i].estado
+}
+</script>
+<template>
+  <div>
+      <div class="grid grid-cols-3 w-2/6 p-3 gap-3">
+        <div v-for="(obj,i) in motos" :key="i"   class="grid grid-rows-3 gap-4">
+          <div v-if="m
+tos[i].estado">
+            <div @click="cambiar(i)" class="bg-green-400 cursor-pointer">{{i}}</div>
+          </div>
+          <div v-else>
+            <div @click="cambiar(i)" class="bg-red-400 cursor-pointer">{{i}}</div>
+          </div>
+        </div>
+      </div>
+  </div>
+</template>
