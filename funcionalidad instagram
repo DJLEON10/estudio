@@ -1,0 +1,14 @@
+function heart(){
+    if(caunt.value==28){
+    caunt.value++
+    like.value=3
+    }
+  }
+  function dislike(){
+    if(like.value==3){
+      like.value++
+      caunt.value=28
+    }
+  }
+let caunt=ref(28)
+  let like=ref(3)
